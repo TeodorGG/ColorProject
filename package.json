@@ -1,0 +1,32 @@
+{
+  "main": "node_modules/expo/AppEntry.js",
+  "homepage": "/colors",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "eject": "expo eject"
+  },
+  "dependencies": {
+    "@eva-design/eva": "^2.1.1",
+    "@expo/ngrok": "^4.1.0",
+    "@react-navigation/stack": "^6.0.11",
+    "@ui-kitten/components": "^5.1.1",
+    "expo": "~42.0.1",
+    "expo-status-bar": "~1.0.4",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-42.0.0.tar.gz",
+    "react-native-pager-view": "^5.4.7",
+    "react-native-svg": "12.1.1",
+    "react-native-web": "~0.13.12",
+    "react-native-web-swiper": "^2.2.1",
+    "react-scripts": "^4.0.3",
+    "react-web-view-pager": "^0.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0"
+  },
+  "private": true
+}

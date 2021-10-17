@@ -1,0 +1,1 @@
+{"ast":null,"code":"export { Swiper as default } from \"./Swiper\";","map":{"version":3,"sources":["/Users/tudordeviza/Documents/UTM/Color Project/node_modules/react-native-web-swiper/build/index.js"],"names":["Swiper","default"],"mappings":"AAAA,SAAOA,MAAM,IAAIC,OAAjB","sourcesContent":["export{Swiper as default}from\"./Swiper\";"]},"metadata":{},"sourceType":"module"}

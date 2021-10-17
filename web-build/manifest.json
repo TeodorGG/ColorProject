@@ -1,0 +1,7 @@
+{
+  "display": "standalone",
+  "lang": "en",
+  "name": "Color Project",
+  "short_name": "Color Project",
+  "start_url": "/?utm_source=web_app_manifest"
+}
