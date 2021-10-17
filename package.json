@@ -1,6 +1,6 @@
 {
   "main": "node_modules/expo/AppEntry.js",
-  "homepage": "http://teodorgg.github.io/colorproject", 
+  "homepage": "/webapp",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
@@ -8,7 +8,8 @@
     "web": "expo start --web",
     "eject": "expo eject",
     "deploy": "color -d web-build",
-    "predeploy": "expo build:web"
+    "predeploy": "expo build:web",
+    "deploy-hosting": "npm run predeploy && firebase deploy --only hosting"
   },
   "dependencies": {
     "@eva-design/eva": "^2.1.1",
@@ -25,7 +26,8 @@
     "react-native-web": "~0.13.12",
     "react-native-web-swiper": "^2.2.1",
     "react-scripts": "^4.0.3",
-    "react-web-view-pager": "^0.0.1"
+    "react-web-view-pager": "^0.0.1",
+    "firebase": "8.2.3"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
