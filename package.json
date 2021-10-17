@@ -1,6 +1,6 @@
 {
   "main": "node_modules/expo/AppEntry.js",
-  "homepage": "/colors",
+  "homepage": "/colorsnpx serve web-build",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
