@@ -1,7 +1,8 @@
 import  React, { Component } from  'react';
-import { View, StyleSheet, TouchableOpacity, Image, Text, Dimensions } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Image, Text, Dimensions, Linking } from 'react-native';
 import Swiper from 'react-native-web-swiper';
 import Answer from './test_answer'
+import {Link} from "@react-navigation/web";
 
 export default class TestPage extends Component {
     constructor(props) {
@@ -15,15 +16,16 @@ export default class TestPage extends Component {
 
         this.questionListData = [];
         this.questionListPage = [];
+        this.answerData = [];
 
         this.settingQuestionData();
         this.settingQuestionPages();
 
     }
 
-    settingQuestionData(){
+    static path = "TestPage";
 
-       
+    settingQuestionData(){
 
         this.questionListData.push({
             id : 0,
@@ -94,11 +96,6 @@ export default class TestPage extends Component {
         h = question.image_data.height;
         w = question.image_data.width;
 
-        // while(h > 400){
-        //     w = w/2;
-        //     h = h/2;
-        // }
-
         var c = w/h;
         w = 400*c;
         h = 400;
@@ -122,6 +119,11 @@ export default class TestPage extends Component {
             this.questionListData[id].answers.map((aa, index) => {
                 if(aa === this.questionListData[id].answer_correct){
                     this.state["bk_"+id+"_"+index].setSS();
+                    this.answerData.push({
+                        data : answer,
+                        answer : JSON.stringify(this.questionListData[id])
+                        
+                    })
                 }
             })
         }
@@ -135,6 +137,7 @@ export default class TestPage extends Component {
             this.swipe.goToPrev(); 
         } else {
             alert("First Page")
+            this.props.navigation.navigate("ResulatPage", {data : JSON.stringify(this.answerData)});
         }
     }
     
@@ -146,7 +149,8 @@ export default class TestPage extends Component {
             this.swipe.goToNext();
 
         } else {
-            alert("Last Page")
+            Linking.openURL("./ResultPage/#data=$"+JSON.stringify(this.answerData));
+
         }
     }
     

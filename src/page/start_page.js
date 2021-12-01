@@ -1,5 +1,22 @@
 import  React, { Component } from  'react';
 import { View, StyleSheet, TouchableOpacity, Image, Text, Dimensions, TextInput, Picker } from 'react-native';
+import {Link} from "@react-navigation/web";
+
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyB7HSzr_YCfzsqlUsHUTvTpqcmwA59kCpU",
+  authDomain: "colorprojectdb.firebaseapp.com",
+  projectId: "colorprojectdb",
+  storageBucket: "colorprojectdb.appspot.com",
+  messagingSenderId: "827530593486",
+  appId: "1:827530593486:web:ad29e0dcbf98b242907c9f",
+  measurementId: "G-GQBSZNPVPF"
+};
+
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 
 export default class StartPage extends Component {
     constructor(props) {
@@ -13,6 +30,12 @@ export default class StartPage extends Component {
         }
 
     }
+
+    static navigationOptions = {
+        title: "StartPage"
+    }
+    static path = "StartPage";
+  
 
     goToDataInput(){
         this.setState({
@@ -28,7 +51,7 @@ export default class StartPage extends Component {
             type : 0
         };
 
-        this.props.navigation.navigate("TestPage", userData)
+        //this.props.navigation.navigate("TestPage", userData)
 
     }
 
@@ -40,7 +63,7 @@ export default class StartPage extends Component {
             user_sex : this.state.user_sex,
         };
 
-        this.props.navigation.navigate("TestPage", userData)
+        //this.props.navigation.navigate("TestPage", userData)
 
 
     }
@@ -96,18 +119,22 @@ export default class StartPage extends Component {
                                 style = {start_page_style.button2test}
                                 onPress = {()=>{this.goNextAnonim()}}
                             >
-                                <Text style = {start_page_style.text_button2test}>
-                                    Anonim test
-                                </Text>
+                                <Link style = {start_page_style.text_button2test} 
+                                routeName="TestPage"><Text style = {start_page_style.text_button2test}>
+                                Anonim test
+                            </Text></Link>
+                                
                             </TouchableOpacity>
 
                             <TouchableOpacity 
                                 style = {start_page_style.button2test}
                                 onPress = {()=>{this.goNextUser()}}
                                 >
-                                <Text style = {start_page_style.text_button2test}>
+                                <Link style = {start_page_style.text_button2test} 
+                                    routeName="TestPage"><Text style = {start_page_style.text_button2test}>
                                     Log with personal data
-                                </Text>
+                                </Text></Link>
+                                
 
                             </TouchableOpacity>
 
@@ -194,6 +221,7 @@ const start_page_style = StyleSheet.create({
         textAlign : 'center',
         color : 'white',
         fontWeight : 'bold'
+        
     }
 
 })
